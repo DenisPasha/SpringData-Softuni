@@ -24,6 +24,10 @@ public enum Constants {
    public static final String ADDED_VILLAIN_TO_DB = "Villain %s was added to the database.%n";
    public static final String COLUMN_LABEL_ID = "id";
 
+   public static final String NO_SUCH_VILLAIN_FOUND = "No such villain was found%n";
+   public static final String DELETED_VILLAIN_FORMAT = "%s was deleted%n" +
+           "%d minions released%n";
+
 
 
 
