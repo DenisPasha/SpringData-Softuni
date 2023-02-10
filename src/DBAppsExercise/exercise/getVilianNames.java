@@ -1,4 +1,7 @@
-package DBAppsExercise.exercise.GetVillainNames;
+package DBAppsExercise.exercise;
+
+import DBAppsExercise.exercise.utils.Constants;
+import DBAppsExercise.exercise.utils.DbConnector;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

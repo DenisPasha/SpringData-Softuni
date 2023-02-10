@@ -1,13 +1,12 @@
 package DBAppsExercise.exercise;
 
-import DBAppsExercise.exercise.GetVillainNames.Constants;
-import DBAppsExercise.exercise.GetVillainNames.DbConnector;
+import DBAppsExercise.exercise.utils.Constants;
+import DBAppsExercise.exercise.utils.DbConnector;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentSkipListMap;
 
 public class ChangeTownNameCasting {
 

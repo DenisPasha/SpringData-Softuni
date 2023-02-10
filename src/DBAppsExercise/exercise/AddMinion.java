@@ -1,9 +1,8 @@
 package DBAppsExercise.exercise;
 
-import DBAppsExercise.exercise.GetVillainNames.Constants;
-import DBAppsExercise.exercise.GetVillainNames.DbConnector;
+import DBAppsExercise.exercise.utils.Constants;
+import DBAppsExercise.exercise.utils.DbConnector;
 
-import java.awt.desktop.PrintFilesEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

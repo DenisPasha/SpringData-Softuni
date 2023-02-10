@@ -1,4 +1,4 @@
-package DBAppsExercise.exercise.GetVillainNames;
+package DBAppsExercise.exercise.utils;
 
 public enum Constants {
     ;
@@ -11,8 +11,8 @@ public enum Constants {
 
   public static final String COLUMN_LABEL_NAME = "name";
   public static final String COLUMN_LABEL_AGE = "age";
-    static final String COLUMN_LABEL_MINIONS_COUNT = "minion_count";
-    static final String PRINT_FORMAT = "%s %d%n";
+  public static final String COLUMN_LABEL_MINIONS_COUNT = "minion_count";
+  public static final String PRINT_FORMAT = "%s %d%n";
 
    public static final String NO_VILLAIN_WITH_GIVEN_ID_FORMAT = "No villain with ID %d exists in the database.%n";
    public static final String VILLAIN_NAME_FORMAT = "Villain: %s%n";
