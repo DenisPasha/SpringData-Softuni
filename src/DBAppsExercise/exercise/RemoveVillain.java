@@ -1,7 +1,9 @@
 package DBAppsExercise.exercise;
 
+import DBAppsExercise.exercise.utils.ColumnLabels;
 import DBAppsExercise.exercise.utils.Constants;
 import DBAppsExercise.exercise.utils.DbConnector;
+import DBAppsExercise.exercise.utils.Messages;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,10 +37,10 @@ public class RemoveVillain {
         ResultSet getVillainSet = getVillainNameStmt.executeQuery();
 
         if (!getVillainSet.next()) {
-            System.out.printf(Constants.NO_SUCH_VILLAIN_FOUND);
+            System.out.printf(Messages.NO_SUCH_VILLAIN_FOUND);
             return;
         }
-        String villainName = getVillainSet.getString(Constants.COLUMN_LABEL_NAME);
+        String villainName = getVillainSet.getString(ColumnLabels.COLUMN_LABEL_NAME);
 
 
         // GET MINIONS COUNT
@@ -60,7 +62,7 @@ public class RemoveVillain {
         deleteVillainStmt.setInt(1,inputId);
         int affectedRows = deleteVillainStmt.executeUpdate();
 
-        System.out.printf(Constants.DELETED_VILLAIN_FORMAT,villainName,minionsCount);
+        System.out.printf(Messages.DELETED_VILLAIN_FORMAT,villainName,minionsCount);
 
 
 

@@ -1,7 +1,9 @@
 package DBAppsExercise.exercise;
 
+import DBAppsExercise.exercise.utils.ColumnLabels;
 import DBAppsExercise.exercise.utils.Constants;
 import DBAppsExercise.exercise.utils.DbConnector;
+import DBAppsExercise.exercise.utils.Messages;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +32,7 @@ public class GetMinionNames {
 
         ResultSet minionsResultSet = minionsStatements.executeQuery();
         if (!minionsResultSet.next()){
-            System.out.printf(Constants.NO_VILLAIN_WITH_GIVEN_ID_FORMAT,index);
+            System.out.printf(Messages.NO_VILLAIN_WITH_GIVEN_ID_FORMAT,index);
             return;
         }
 
@@ -38,18 +40,18 @@ public class GetMinionNames {
         getVillainStatement.setInt(1,index);
         ResultSet villainResulSet = getVillainStatement.executeQuery();
         villainResulSet.next();
-        String villainName = villainResulSet.getString(Constants.COLUMN_LABEL_NAME);
+        String villainName = villainResulSet.getString(ColumnLabels.COLUMN_LABEL_NAME);
 
-        System.out.printf(Constants.VILLAIN_NAME_FORMAT,villainName);
+        System.out.printf(Messages.VILLAIN_NAME_FORMAT,villainName);
 
         int minionCount = 1;
 
 
         while (minionsResultSet.next()){
-            String minionName = minionsResultSet.getString(Constants.COLUMN_LABEL_NAME);
-            int minionAge = minionsResultSet.getInt(Constants.COLUMN_LABEL_AGE);
+            String minionName = minionsResultSet.getString(ColumnLabels.COLUMN_LABEL_NAME);
+            int minionAge = minionsResultSet.getInt(ColumnLabels.COLUMN_LABEL_AGE);
 
-            System.out.printf(Constants.MINION_NAME_AND_AGE_FORMAT,minionCount,minionName,minionAge);
+            System.out.printf(Messages.MINION_NAME_AND_AGE_FORMAT,minionCount,minionName,minionAge);
 
             minionCount++;
         }

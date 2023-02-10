@@ -1,7 +1,9 @@
 package DBAppsExercise.exercise;
 
+import DBAppsExercise.exercise.utils.ColumnLabels;
 import DBAppsExercise.exercise.utils.Constants;
 import DBAppsExercise.exercise.utils.DbConnector;
+import DBAppsExercise.exercise.utils.Messages;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class ChangeTownNameCasting {
         int i = updateTownsStmt.executeUpdate();
 
         if (i==0){
-            System.out.println(Constants.NO_TOWNS_WERE_AFFECTED);
+            System.out.println(Messages.NO_TOWNS_WERE_AFFECTED);
             return;
         }
 
@@ -39,9 +41,9 @@ public class ChangeTownNameCasting {
         List<String> townsList = new ArrayList<>();
 
         while (townsSet.next()){
-            townsList.add(townsSet.getString(Constants.COLUMN_LABEL_NAME));
+            townsList.add(townsSet.getString(ColumnLabels.COLUMN_LABEL_NAME));
         }
-        System.out.printf(Constants.COUNT_OF_AFFECTED_TOWNS_FORMAT,townsList.size());
+        System.out.printf(Messages.COUNT_OF_AFFECTED_TOWNS_FORMAT,townsList.size());
         System.out.println(townsList);
 
     }

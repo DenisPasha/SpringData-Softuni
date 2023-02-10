@@ -1,7 +1,9 @@
 package DBAppsExercise.exercise;
 
+import DBAppsExercise.exercise.utils.ColumnLabels;
 import DBAppsExercise.exercise.utils.Constants;
 import DBAppsExercise.exercise.utils.DbConnector;
+import DBAppsExercise.exercise.utils.Messages;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,7 +56,7 @@ public class AddMinion {
             addTownToDBStmt.setString(1,townName);
             int i = addTownToDBStmt.executeUpdate();
 
-            System.out.printf(Constants.ADDED_TOWN_TO_DB,townName);
+            System.out.printf(Messages.ADDED_TOWN_TO_DB,townName);
         }
 
         PreparedStatement getVillainNameStmt = connection.prepareStatement(GET_VILLAIN_BY_NAME_IF_EXIST);
@@ -68,7 +70,7 @@ public class AddMinion {
             addVillainToDBStmt.setString(1,villainNameInput);
             addVillainToDBStmt.setString(2,EVILNESS_FACTOR);
             int i = addVillainToDBStmt.executeUpdate();
-            System.out.printf(Constants.ADDED_VILLAIN_TO_DB,villainNameInput);
+            System.out.printf(Messages.ADDED_VILLAIN_TO_DB,villainNameInput);
         }
 
         //GET TOWN ID
@@ -76,7 +78,7 @@ public class AddMinion {
         getTownIDStmt.setString(1,townName);
         ResultSet townIDResultSet = getTownIDStmt.executeQuery();
         townIDResultSet.next();
-        int townId = townIDResultSet.getInt(Constants.COLUMN_LABEL_ID);
+        int townId = townIDResultSet.getInt(ColumnLabels.COLUMN_LABEL_ID);
 
         // INSERT MINION TO DB
         PreparedStatement addMinionsToDbStmt = connection.prepareStatement(ADD_MINION_TO_DB);
@@ -101,7 +103,7 @@ public class AddMinion {
         getVillainIdStmt.setString(1,villainNameInput);
         ResultSet getVillainIdSet = getVillainIdStmt.executeQuery();
         getVillainIdSet.next();
-        int villainId = getVillainIdSet.getInt(Constants.COLUMN_LABEL_ID);
+        int villainId = getVillainIdSet.getInt(ColumnLabels.COLUMN_LABEL_ID);
 
         // ADDING THE NEWLY INSERTED MINION TO BE SERVANT OF THE GIVEN VILLAIN
 
@@ -110,6 +112,6 @@ public class AddMinion {
         addMinionToServeStmt.setInt(2,villainId);
         int i1 = addMinionToServeStmt.executeUpdate();
 
-        System.out.printf(Constants.MINION_ADDED_TO_SERVE,minionName, villainNameInput);
+        System.out.printf(Messages.MINION_ADDED_TO_SERVE,minionName, villainNameInput);
     }
 }
