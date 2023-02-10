@@ -19,6 +19,11 @@ public enum Constants {
    public static final String MINION_NAME_AND_AGE_FORMAT = "%d. %s %d%n";
    public static final String NO_TOWNS_WERE_AFFECTED = "No town names were affected.";
    public static final String COUNT_OF_AFFECTED_TOWNS_FORMAT = "%d town names were affected.%n";
+   public static final String MINION_ADDED_TO_SERVE = "Successfully added %s to be minion of %s.%n";
+   public static final String ADDED_TOWN_TO_DB = "Town %S was added to the database.%n";
+   public static final String ADDED_VILLAIN_TO_DB = "Villain %s was added to the database.%n";
+   public static final String COLUMN_LABEL_ID = "id";
+
 
 
 
