@@ -17,6 +17,8 @@ public enum Constants {
    public static final String NO_VILLAIN_WITH_GIVEN_ID_FORMAT = "No villain with ID %d exists in the database.%n";
    public static final String VILLAIN_NAME_FORMAT = "Villain: %s%n";
    public static final String MINION_NAME_AND_AGE_FORMAT = "%d. %s %d%n";
+   public static final String NO_TOWNS_WERE_AFFECTED = "No town names were affected.";
+   public static final String COUNT_OF_AFFECTED_TOWNS_FORMAT = "%d town names were affected.%n";
 
 
 
