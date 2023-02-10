@@ -1,5 +1,6 @@
 package DBAppsExercise.exercise;
 
+import DBAppsExercise.exercise.utils.ColumnLabels;
 import DBAppsExercise.exercise.utils.Constants;
 import DBAppsExercise.exercise.utils.DbConnector;
 import DBAppsExercise.exercise.utils.Messages;
@@ -25,8 +26,8 @@ public class getVilianNames {
         ResultSet resultSet = statement.executeQuery();
 
         while (resultSet.next()){
-            String name = resultSet.getString(Constants.COLUMN_LABEL_NAME);
-            int count = resultSet.getInt(Constants.COLUMN_LABEL_MINIONS_COUNT);
+            String name = resultSet.getString(ColumnLabels.COLUMN_LABEL_NAME);
+            int count = resultSet.getInt(ColumnLabels.COLUMN_LABEL_MINIONS_COUNT);
 
             System.out.printf(Messages.PRINT_FORMAT,name , count);
         }
