@@ -1,4 +1,4 @@
-package DBAppsExercise;
+package DBAppsExercise.exercise.GetVillainNames;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.util.Properties;
 public enum DbConnector {
     ;
 
-    static Connection getDBConnection() throws SQLException {
+    public static Connection getDBConnection() throws SQLException {
 
         Properties props = new Properties();
 
